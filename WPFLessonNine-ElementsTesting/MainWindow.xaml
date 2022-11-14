@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPFLessonNine_ElementsTesting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFLessonNine_ElementsTesting"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Background="red" Header="Element with items collection">
+                <Grid Background="#99c0c0c0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>                       
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lb_sample" Grid.Column="0">
+                        <ListBoxItem Content="Элемент 1 списка"/>
+                        <ListBoxItem Content="Элемент 2 списка"/>
+                        <ListBoxItem Content="Элемент 3 списка"/>
+                        <ListBoxItem Content="Элемент 4 списка"/>
+                        <ListBoxItem Content="Элемент 5 списка"/>
+                    </ListBox>
+                    <ComboBox x:Name="cb_main" Grid.Column="1" Height="30" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2">
+                        <ComboBoxItem Content="Обычный комбобокс"/>
+                        <Button x:Name="cb_firstItem" Content="Элемент 1" Click="cb_firstItem_Click"/>
+                        <Button x:Name="cb_secondItem" Content="Элемент 2" Click="cb_secondItem_Click"/>
+                        <Button x:Name="cb_thirdItem" Content="Элемент 3" Click="cb_thirdItem_Click"/>
+                    </ComboBox>
+                    <TreeView x:Name="tree_sample" Grid.Column="2" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Background="Cyan" Header="Range elements">
+                <Grid Background="#99c0c0c0"/>
+            </TabItem>
+            <TabItem Background="Magenta" Header="Groupping elements">
+                <Grid Background="#99c0c0c0"/>
+            </TabItem>
+            <TabItem Background="OrangeRed" Header="Label element">
+                <Grid Background="#99c0c0c0"/>
+            </TabItem>
+            <TabItem Background="BlueViolet" Header="Primitive elements">
+                <Grid Background="#99c0c0c0" />
+            </TabItem>
+            <TabItem Background="LightGoldenrodYellow" Header="Fonts">
+                <Grid Background="#99c0c0c0" />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
