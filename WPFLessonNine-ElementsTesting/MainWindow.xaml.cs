@@ -27,29 +27,23 @@ namespace WPFLessonNine_ElementsTesting
 
         private void cb_firstItem_Click(object sender, RoutedEventArgs e)
         {
-            tree_sample.Items.Add(lb_sample.Items[0].ToString());
+            tree_sample.Items.Add(((ListBoxItem)lb_sample.Items[0]).Content);
         }
 
         private void cb_secondItem_Click(object sender, RoutedEventArgs e)
         {
-            tree_sample.Items.Clear();
-            TreeView tree_sample2 = new TreeView();
-            tree_sample2.Items.Add(lb_sample.Items[1].ToString());
-            tree_sample2.Items.Add(lb_sample.Items[2]);
-            tree_sample.Items.Add(lb_sample.Items[0]);
+            TreeViewItem tree_sample2 = new TreeViewItem { Header = "Дерево 2 уровня" };
+            tree_sample2.Items.Add(((ListBoxItem)lb_sample.Items[1]).Content);
+            tree_sample2.Items.Add(((ListBoxItem)lb_sample.Items[2]).Content);
             tree_sample.Items.Add(tree_sample2);
         }
 
         private void cb_thirdItem_Click(object sender, RoutedEventArgs e)
         {
-            /*TreeView tree_sample3 = new TreeView();
-            tree_sample3.Items.Add(lb_sample.Items[3]);
-            tree_sample3.Items.Add(lb_sample.Items[4]);
-            tree_sample2.Items.Clear();
-            tree_sample2.Items.Add(lb_sample.Items[1]);
-            tree_sample2.Items.Add(lb_sample.Items[2]);
-            tree_sample2.Items.Add(tree_sample3);
-            tree_sample.Items.Add(tree_sample2);*/
+            TreeViewItem tree_sample3 = new TreeViewItem { Header = "Дерево 3 уровня" };
+            tree_sample3.Items.Add(((ListBoxItem)lb_sample.Items[3]).Content);
+            tree_sample3.Items.Add(((ListBoxItem)lb_sample.Items[4]).Content);
+            ((TreeViewItem)tree_sample.Items[1]).Items.Add(tree_sample3);
         }
     }
 }
