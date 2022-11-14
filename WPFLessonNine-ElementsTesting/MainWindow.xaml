@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFLessonNine_ElementsTesting"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="800">
+        Title="MainWindow" Height="450" Width="800" x:Name="forma">
     <Grid>
         <TabControl>
             <TabItem Background="red" Header="Element with items collection">
@@ -42,9 +42,12 @@
                                  VerticalAlignment="Top" Width="245" Minimum="450" Maximum="800" Value="450"/>
                     <ScrollBar x:Name="sb"  Grid.Column="1" Orientation="Vertical" 
                                HorizontalAlignment="Left" Margin="247,0,0,0" VerticalAlignment="Center" Height="286"/>
-                    <Slider x:Name="sli" Grid.Column="2" HorizontalAlignment="Center" Margin="20,122,0,0" 
-                            VerticalAlignment="Top" Width="207" Height="29" SmallChange="1"/>
-                    <GroupBox x:Name="groupB" Grid.Column="1" Header="GroupBox" Height="500"/>
+                    <Slider x:Name="sli" Grid.Column="2" HorizontalAlignment="Center" Margin="20,122,0,0"  Value="5"
+                            VerticalAlignment="Top" Width="207" Height="29" SmallChange="5" ValueChanged="sli_ValueChanged" 
+                            TickFrequency="5" Minimum="5" Maximum="25" Ticks="5,10,15,20,25" TickPlacement="BottomRight" LargeChange="5"/>
+                    <GroupBox x:Name="groupB" Grid.Column="1" Header="GroupBox" Height="500" />
+                    <Button x:Name="btn_start" Content="Button1" HorizontalAlignment="Left" Margin="124,81,0,0"  
+                            VerticalAlignment="Top" Click="btn_start_Click" />
                 </Grid>
             </TabItem>
             <TabItem Background="Magenta" Header="Groupping elements">
