@@ -11,47 +11,64 @@
             <TabItem Background="red" Header="Element with items collection">
                 <Grid Background="#99c0c0c0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="221*"></ColumnDefinition>
+                        <ColumnDefinition Width="43*"/>
+                        <ColumnDefinition Width="265*"></ColumnDefinition>
+                        <ColumnDefinition Width="265*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="lb_sample" Grid.Column="0">
+                    <ListBox x:Name="lb_sample" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,264,0">
                         <ListBoxItem Content="Элемент 1 списка"/>
                         <ListBoxItem Content="Элемент 2 списка"/>
                         <ListBoxItem Content="Элемент 3 списка"/>
                         <ListBoxItem Content="Элемент 4 списка"/>
                         <ListBoxItem Content="Элемент 5 списка"/>
                     </ListBox>
-                    <ComboBox x:Name="cb_main" Grid.Column="1" Height="30" VerticalAlignment="Top" Width="120">
+                    <ComboBox x:Name="cb_main" Grid.Column="2" Height="30" VerticalAlignment="Top" Width="120" Margin="72,0,72,0">
                         <ComboBoxItem Content="Обычный комбобокс"/>
                         <Button x:Name="cb_firstItem" Content="Элемент 1" Click="cb_firstItem_Click"/>
                         <Button x:Name="cb_secondItem" Content="Элемент 2" Click="cb_secondItem_Click"/>
                         <Button x:Name="cb_thirdItem" Content="Элемент 3" Click="cb_thirdItem_Click"/>
                     </ComboBox>
-                    <TreeView x:Name="tree_sample" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <TreeView x:Name="tree_sample" Grid.Column="2" Grid.ColumnSpan="2" Margin="264,0,0,0"/>
                 </Grid>
             </TabItem>
             <TabItem Background="Cyan" Header="Range elements">
-                <Grid Background="#99c0c0c0">
+                <Grid x:Name="grid"  Background="#99c0c0c0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <ProgressBar x:Name="pb" Grid.Column="0" HorizontalAlignment="Center" Height="28" Margin="0,149,0,0" 
+                    <ProgressBar x:Name="pb" HorizontalAlignment="Center" Height="28" Margin="0,149,0,0" 
                                  VerticalAlignment="Top" Width="245" Minimum="450" Maximum="800" Value="450"/>
-                    <ScrollBar x:Name="sb"  Grid.Column="1" Orientation="Vertical" 
-                               HorizontalAlignment="Left" Margin="247,0,0,0" VerticalAlignment="Center" Height="286"/>
-                    <Slider x:Name="sli" Grid.Column="2" HorizontalAlignment="Center" Margin="20,122,0,0"  Value="5"
-                            VerticalAlignment="Top" Width="207" Height="29" SmallChange="5" ValueChanged="sli_ValueChanged" 
-                            TickFrequency="5" Minimum="5" Maximum="25" Ticks="5,10,15,20,25" TickPlacement="BottomRight" LargeChange="5"/>
-                    <GroupBox x:Name="groupB" Grid.Column="1" Header="GroupBox" Height="500" />
-                    <Button x:Name="btn_start" Content="Button1" HorizontalAlignment="Left" Margin="124,81,0,0"  
-                            VerticalAlignment="Top" Click="btn_start_Click" />
+                    <ScrollBar x:Name="sb"  Grid.Column="3" Orientation="Vertical" 
+                               HorizontalAlignment="Left" Margin="130,0,0,0" VerticalAlignment="Center" Height="286"/>
+                    <Slider x:Name="sli" SmallChange="5" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Margin="48,122,0,0" Width="207" Height="29" Ticks="0,5,10,15,20,25" ValueChanged="sli_ValueChanged" TickFrequency="5" Grid.ColumnSpan="2" />
+                    <Button x:Name="btn_start" Content="Button1" HorizontalAlignment="Left" Margin="24,81,0,0"  
+                            VerticalAlignment="Top" Click="btn_start_Click" Width="200" Height="60">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border CornerRadius="35" Background="White">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
                 </Grid>
             </TabItem>
             <TabItem Background="Magenta" Header="Groupping elements">
-                <Grid Background="#99c0c0c0"/>
+                <Grid Background="#99c0c0c0">
+                    <GroupBox x:Name="gb" Header="GroupBox" Margin="0,58,0,0"/>
+                    <Slider x:Name="sli2" HorizontalAlignment="Left" Margin="365,24,0,0" VerticalAlignment="Top" Width="120" ValueChanged="sli2_ValueChanged" LargeChange="5" SmallChange="5" Maximum="25" Value="5" Minimum="5"/>
+                </Grid>
             </TabItem>
             <TabItem Background="OrangeRed" Header="Label element">
                 <Grid Background="#99c0c0c0"/>

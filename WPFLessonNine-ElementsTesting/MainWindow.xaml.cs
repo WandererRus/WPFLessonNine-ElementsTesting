@@ -24,7 +24,6 @@ namespace WPFLessonNine_ElementsTesting
         public MainWindow()
         {
             InitializeComponent();
-            groupB.Height = 500;
         }
 
         private void cb_firstItem_Click(object sender, RoutedEventArgs e)
@@ -64,7 +63,17 @@ namespace WPFLessonNine_ElementsTesting
 
         private void sli_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            groupB.Height = 100 ;
+            gb.Height = e.NewValue * 50 ;
+        }
+
+        private void sli2_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            gb.Height = e.NewValue * 50;
+        }
+
+        private void sli_ValueChanged_1(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            gb.Height = e.NewValue * 50;
         }
     }
 }
