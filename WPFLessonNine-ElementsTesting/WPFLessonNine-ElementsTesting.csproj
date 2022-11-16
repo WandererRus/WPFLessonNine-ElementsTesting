@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="bullet.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="bullet.png" />
+  </ItemGroup>
+
 </Project>

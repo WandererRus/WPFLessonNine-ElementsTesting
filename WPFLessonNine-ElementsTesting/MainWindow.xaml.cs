@@ -75,5 +75,14 @@ namespace WPFLessonNine_ElementsTesting
         {
             gb.Height = e.NewValue * 50;
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            pop1.IsOpen = true;
+            pop2.IsOpen = true;
+            pop3.IsOpen = true;
+            pop4.IsOpen = true;
+
+        }
     }
 }

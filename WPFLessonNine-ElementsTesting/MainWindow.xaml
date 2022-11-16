@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" x:Name="forma">
     <Grid>
-        <TabControl>
+        <TabControl SelectedIndex="3">
             <TabItem Background="red" Header="Element with items collection">
                 <Grid Background="#99c0c0c0">
                     <Grid.ColumnDefinitions>
@@ -71,7 +71,21 @@
                 </Grid>
             </TabItem>
             <TabItem Background="OrangeRed" Header="Label element">
-                <Grid Background="#99c0c0c0"/>
+                <Grid Background="#99c0c0c0" Width="350" Height="350" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image x:Name="img" Height="250" Source="/bullet.png" MouseDown="Image_MouseDown"/>
+                    <Popup x:Name="pop1" IsOpen="True" Placement="Bottom" PlacementTarget="{Binding ElementName=img}">
+                        <TextBlock Background="LightBlue" Padding="3" Text="Placement = Bottom"/>
+                    </Popup>
+                    <Popup x:Name="pop2" IsOpen="True" Placement="Left">
+                        <TextBlock Background="LightBlue" Padding="3" Text="Placement = Left"/>
+                    </Popup>
+                    <Popup x:Name="pop3" IsOpen="True" Placement="Right">
+                        <TextBlock Background="LightBlue" Padding="3" Text="Placement = Right"/>
+                    </Popup>
+                    <Popup x:Name="pop4" IsOpen="True" Placement="Top">
+                        <TextBlock Background="LightBlue" Padding="3" Text="Placement = Top"/>
+                    </Popup>
+                </Grid>
             </TabItem>
             <TabItem Background="BlueViolet" Header="Primitive elements">
                 <Grid Background="#99c0c0c0" />
